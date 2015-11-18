@@ -1,3 +1,172 @@
 BoxLayout:
-    Label:
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 0,0.6,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: (1,0.2)
+        Button:
+            id: entree_tab
+            text: 'Entree'
+        Button:
+            id: mains_seafood_tab
+            text: 'Seafood'
+            multiline: True
+        Button:
+            id: main_curry_tab
+            text: 'Curry'
+        Button:
+            id: main_salad_tab
+            text: 'Salad'
+        Button:
+            id: main_stirfri_tab
+            text: 'Stir Fry'
+        Button:
+            id: main_grills_tab
+            text: 'Grills'
+        Button:
+            id: main_noodles_tab
+            text: 'Noodles'
+        Button:
+            id: desserts_tab
+            text: 'Desserts'
+        Button:
+            id: drinks_tab
+            text: 'Drinks'
+
+    BoxLayout:
+        orientation: 'horizontal'
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.5, 1
+            Label:
+                text: 'Entree`'
+            Button:
+                id: Crab_and_Mince_Add
+                on_press: app.add_total(11.00, self.text)
+                text: 'Crab and Mince'
+            Button:
+                id: fishcake_Add
+                on_press: app.add_total(11.00, self.text)
+                text: 'Fish Cake'
+            Button:
+                id: Curry_puffs_Add
+                on_press: app.add_total(11.00, self.text)
+                text: 'Curry Puffs'
+            Button:
+                id: Spring_rolls_Add
+                on_press: app.add_total(11.00, self.text)
+                text: 'Spring Rolls'
+            Spinner:
+                id: Satay_Add
+                on_text: app.add_total(11.00, self.text)
+                values: app.spinner_satay
+                text: 'Satay'
+            Button:
+                id: Mixed_Add
+                on_press: app.add_total(12.00, self.text)
+                text: 'Mixed Entree'
+            Button:
+                id: Golden_cup_add
+                on_press: app.add_total(11.00, self.text)
+                text: 'Golden Cup'
+            Button:
+                id: cPrawn_add
+                on_press: app.add_total(11.00, self.text)
+                text: 'Coconut Prawn'
+            Button:
+                id: Golden_bag_add
+                on_press: app.add_total(11.00, self.text)
+                text: 'Golden Bag'
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.5,1.02
+            Label:
+                text: 'Soup'
+            Button:
+                id: Prawn_soup
+                on_press: app.add_total(13.00, self.text)
+                text: 'Prawn Soup - $13'
+            Button:
+                id: chicksoup
+                on_press: app.add_total(12.00, self.text)
+                text: 'Chicken Soup'
+            Button:
+                id: mixed_cfood_soup
+                on_press: app.add_total(13.00, self.text)
+                text: 'Mixed seafood soup'
+            Button:
+                id: ChickCocoSoup_add
+                on_press: app.add_total(12.00, self.text)
+                text: 'Chicken Coconut Soup'
+            Button:
+                id: Clear_soup_add
+                on_press: app.add_total(12.00, self.text)
+                text: 'Clear Soup'
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.5,1
+            Label:
+                id: Veg_entree
+                text: 'Vegetable Entree'
+            Button:
+                id: Veg_spring
+                on_press: app.add_total(11.00, self.text)
+                text: 'Vegetable Spring Rolls'
+            Button:
+                id: Corn_cakes
+                on_press: app.add_total(11.00, self.text)
+                text: 'Corn Cakes'
+            Button:
+                id: fBeancurd
+                on_press: app.add_total(11.00, self.text)
+                text: 'Fried Bean Curd'
+            Label:
+                id: Veg_spring
+                text: 'Vegetable Soups'
+            Button:
+                id: Spicy_muschroom
+                on_press: app.add_total(12.00, self.text)
+                text: 'Spicy Mushroom Soup'
+            Button:
+                id: Clear_soup_Beancurd
+                on_press: app.add_total(12.00, self.text)
+                text: 'Clear Soup Beancurd'
+
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: (1, 0.2)
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                id: Total_bill
+                text: 'The total bill is: '
+            Label:
+                id: Number_of_items
+                text: 'Number of items: '
+        BoxLayout:
+            orientation: 'vertical'
+            Spinner:
+                id: Total_items
+                text: 'Your Order'
+                values: app.all_items_spinner
+                canvas.before:
+                    Color:
+                        rgba: 0,0.6,1,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Button:
+                id: Del_Item
+                text: 'Deleted this item'
+                on_press: app.delete_item('this for now')
+
+
 
